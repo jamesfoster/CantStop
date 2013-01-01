@@ -12,7 +12,7 @@
 		{
 			var game = Games.Get(request.Id);
 
-			if (game == null)
+			if (game == null || game.Status != GameState.Created)
 				return null;
 
 			game.Status = GameState.PreDiceRolled;

@@ -6,7 +6,7 @@
 	using Moq;
 	using It = Machine.Specifications.It;
 
-	public class When_starting_a_game : Given_a_game_repository
+	public class When_starting_a_game_which_has_already_started : Given_a_game_repository
 	{
 		protected static StartGame StartGame { get; set; }
 		protected static StartGameRequest Request { get; set; }
@@ -20,7 +20,7 @@
 
 				Game = new Game
 					{
-						Status = GameState.Created
+						Status = GameState.PreDiceRolled
 					};
 				Game.Players.Add(new Player());
 				Game.Players.Add(new Player());
@@ -32,11 +32,8 @@
 				Response = StartGame.Execute(Request);
 			};
 
-		It should_update_the_game_in_the_respository = () => GameRepositoryMock.Verify(r => r.Update(Game), Times.Once());
-		It should_change_the_game_state_to_PreDiceRolled = () => Game.Status.ShouldEqual(GameState.PreDiceRolled);
-		It should_be_player_1s_turn = () => Game.CurrentPlayer.ShouldEqual(1);
-		It should_have_no_dice_roll = () => Game.Dice.ShouldContainOnly(0, 0, 0, 0);
-		It the_players_should_start_at_0 = () => Game.Players.ForEach(p => p.Position.ShouldContainOnly(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0));
+		It should_not_call_update = () => GameRepositoryMock.Verify(r => r.Update(Game), Times.Never());
+		It should_return_null = () => Response.ShouldBeNull();
 
 	}
 }
