@@ -37,6 +37,8 @@
   <ItemGroup>
     <Compile Include="CreateGameRequest.cs" />
     <Compile Include="CreateGameResponse.cs" />
+    <Compile Include="PairDiceRequest.cs" />
+    <Compile Include="PairDiceResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RollDiceRequest.cs" />
     <Compile Include="RollDiceResponse.cs" />

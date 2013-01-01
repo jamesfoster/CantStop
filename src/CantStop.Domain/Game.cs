@@ -8,6 +8,7 @@ namespace CantStop.Domain
 		{
 			Players = new List<Player>();
 			Dice = new int[4];
+			Climbers = new Dictionary<int, int>();
 		}
 
 		public long Id { get; set; }
@@ -16,5 +17,6 @@ namespace CantStop.Domain
 		public List<Player> Players { get; set; }
 		public int CurrentPlayer { get; set; }
 		public int[] Dice { get; set; }
+		public Dictionary<int, int> Climbers { get; set; }
 	}
 }
