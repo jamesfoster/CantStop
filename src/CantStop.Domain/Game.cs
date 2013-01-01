@@ -18,5 +18,15 @@ namespace CantStop.Domain
 		public int CurrentPlayer { get; set; }
 		public int[] Dice { get; set; }
 		public Dictionary<int, int> Climbers { get; set; }
+
+		public void NextPlayer()
+		{
+			CurrentPlayer = CurrentPlayer == Players.Count ? 1 : CurrentPlayer + 1;
+		}
+
+		public void ResetDice()
+		{
+			Dice = new int[4];
+		}
 	}
 }

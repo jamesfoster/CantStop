@@ -54,6 +54,8 @@
     <Compile Include="When_a_player_pairs_the_dice_with_3_climbers_and_no_matches.cs" />
     <Compile Include="When_a_player_pairs_the_dice_with_no_climbers.cs" />
     <Compile Include="When_a_player_rolls_the_dice.cs" />
+    <Compile Include="When_a_player_stops.cs" />
+    <Compile Include="When_a_player_stops_if_dice_rolled.cs" />
     <Compile Include="When_a_player_tries_to_roll_the_dice_if_dice_already_rolled.cs" />
     <Compile Include="When_a_player_tries_to_roll_the_dice_if_game_not_started.cs" />
     <Compile Include="When_creating_a_game.cs" />
