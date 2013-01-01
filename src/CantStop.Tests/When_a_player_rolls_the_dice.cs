@@ -37,6 +37,7 @@
 		It should_change_the_game_state_to_DiceRolled = () => Game.Status.ShouldEqual(GameState.DiceRolled);
 		It should_still_be_player_1s_turn = () => Game.CurrentPlayer.ShouldEqual(1);
 		It should_roll_the_dice = () => Game.Dice.ShouldEachConformTo(d => 1 <= d && d <= 6);
+		It should_return_the_dice_results = () => Response.Dice.ShouldContainOnly(Game.Dice);
 
 	}
 }

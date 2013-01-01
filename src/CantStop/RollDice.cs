@@ -26,7 +26,7 @@
 
 			Games.Update(game);
 
-			return new RollDiceResponse();
+			return new RollDiceResponse {Dice = game.Dice};
 		}
 	}
 }
