@@ -12,5 +12,9 @@ namespace CantStop.Domain
 		public long Id { get; set; }
 
 		public List<Player> Players { get; set; }
+
+		public GameState Status { get; set; }
+
+		public int CurrentPlayer { get; set; }
 	}
 }

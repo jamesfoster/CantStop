@@ -17,6 +17,8 @@ namespace CantStop
 				game.Players.Add(new Player());
 			}
 
+			game.Status = GameState.Created;
+
 			Games.Add(game);
 
 			return new CreateGameResponse {Id = game.Id};

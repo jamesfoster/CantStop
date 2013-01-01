@@ -47,8 +47,12 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Given_a_game_repository.cs" />
+    <Compile Include="MockRepository.cs" />
     <Compile Include="When_creating_a_game.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="When_starting_a_game.cs" />
+    <Compile Include="When_starting_a_game_which_doesnt_exist.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

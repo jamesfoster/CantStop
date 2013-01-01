@@ -7,7 +7,8 @@ namespace CantStop.Data
 		where T : class, IEntity
 	{
 		List<T> All();
-		void Add(params T[] entities);
 		T Get(long key);
+		void Add(params T[] entities);
+		void Update(params T[] entities);
 	}
 }

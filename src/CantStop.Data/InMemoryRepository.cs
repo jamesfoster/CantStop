@@ -24,6 +24,15 @@ namespace CantStop.Data
 			}
 		}
 
+		public void Update(params T[] entities)
+		{
+			foreach (var entity in entities)
+			{
+				if (_entities.ContainsKey(entity.Id))
+					_entities[entity.Id] = entity;
+			}
+		}
+
 		public T Get(long key)
 		{
 			T entity;
