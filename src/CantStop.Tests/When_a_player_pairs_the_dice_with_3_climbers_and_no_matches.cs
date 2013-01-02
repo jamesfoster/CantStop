@@ -48,5 +48,6 @@
 		It should_not_increment_climber_4 = () => Game.Climbers[4].ShouldEqual(1);
 		It should_not_increment_climber_5 = () => Game.Climbers[5].ShouldEqual(1);
 		It should_have_3_climbers = () => Game.Climbers.Count.ShouldEqual(3);
+		It should_return_null = () => Response.ShouldBeNull();
 	}
 }

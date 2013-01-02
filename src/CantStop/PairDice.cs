@@ -13,13 +13,13 @@
 		{
 			var game = Games.Get(request.Id);
 
-			if (CheckDecision(game, request.FirstChoice))
-			{
-				game.Dice = new int[4];
-				game.Status = GameState.PreDiceRolled;
+			if (!CheckDecision(game, request.FirstChoice))
+				return null;
 
-				Games.Update(game);
-			}
+			game.Dice = new int[4];
+			game.Status = GameState.PreDiceRolled;
+
+			Games.Update(game);
 
 			return new PairDiceResponse();
 		}

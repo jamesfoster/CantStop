@@ -38,6 +38,7 @@
 		It should_not_change_the_game_state = () => Game.Status.ShouldEqual(GameState.DiceRolled);
 		It should_not_change_the_dice = () => Game.Dice.ShouldContainOnly(1, 2, 3, 4);
 		It should_still_be_player_1s_turn = () => Game.CurrentPlayer.ShouldEqual(1);
+		It should_return_null = () => Response.ShouldBeNull();
 
 	}
 }

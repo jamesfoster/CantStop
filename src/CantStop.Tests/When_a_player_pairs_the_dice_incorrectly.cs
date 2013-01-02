@@ -7,25 +7,25 @@
 	using Moq;
 	using It = Machine.Specifications.It;
 
-	public class When_a_player_stops_if_dice_rolled : Given_a_game_repository
+	public class When_a_player_pairs_the_dice_incorrectly : Given_a_game_repository
 	{
-		protected static Stop Stop { get; set; }
-		protected static StopRequest Request { get; set; }
-		protected static StopResponse Response { get; set; }
+		protected static PairDice PairDice { get; set; }
+		protected static PairDiceRequest Request { get; set; }
+		protected static PairDiceResponse Response { get; set; }
 		protected static Game Game { get; set; }
 
 		Establish that = () =>
 			{
-				Stop = new Stop {Games = GameRepository};
+				PairDice = new PairDice {Games = GameRepository};
 				var dice = new[] {3, 4, 4, 5};
-				Request = new StopRequest {Id = 1};
+				Request = new PairDiceRequest {Id = 1, FirstChoice = 4};
 
 				Game = new Game
 					{
 						Status = GameState.DiceRolled,
 						CurrentPlayer = 1,
 						Dice = dice,
-						Climbers = new Dictionary<int, int> {{3, 1}, {4, 1}, {5, 1}}
+						Climbers = new Dictionary<int, int>()
 					};
 				Game.Players.Add(new Player());
 				Game.Players.Add(new Player());
@@ -34,14 +34,14 @@
 
 		Because of = () =>
 			{
-				Response = Stop.Execute(Request);
+				Response = PairDice.Execute(Request);
 			};
 
-		It should_update_the_game_in_the_respository = () => GameRepositoryMock.Verify(r => r.Update(Game), Times.Never());
-		It should_change_the_game_state_to_PreDiceRolled = () => Game.Status.ShouldEqual(GameState.DiceRolled);
+		It should_not_call_update = () => GameRepositoryMock.Verify(r => r.Update(Game), Times.Never());
+		It should_not_change_the_game_state = () => Game.Status.ShouldEqual(GameState.DiceRolled);
 		It should_still_be_player_1s_turn = () => Game.CurrentPlayer.ShouldEqual(1);
 		It should_not_reset_the_dice = () => Game.Dice.ShouldContainOnly(3, 4, 4, 5);
-		It should_not_reset_the_climbers = () => Game.Climbers.ShouldEqual(new Dictionary<int, int> {{3, 1}, {4, 1}, {5, 1}});
+		It should_not_create_climbers = () => Game.Climbers.Count.ShouldEqual(0);
 		It should_return_null = () => Response.ShouldBeNull();
 
 	}

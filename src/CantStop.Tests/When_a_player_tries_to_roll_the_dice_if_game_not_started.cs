@@ -35,6 +35,7 @@
 		It should_update_the_game_in_the_respository = () => GameRepositoryMock.Verify(r => r.Update(Game), Times.Never());
 		It should_not_change_the_game_state = () => Game.Status.ShouldEqual(GameState.Created);
 		It should_not_change_the_dice = () => Game.Dice.ShouldContainOnly(0, 0, 0, 0);
+		It should_return_null = () => Response.ShouldBeNull();
 
 	}
 }
