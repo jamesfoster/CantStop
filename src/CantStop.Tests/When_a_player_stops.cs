@@ -41,6 +41,8 @@
 		It should_reset_the_dice = () => Game.Dice.ShouldContainOnly(0, 0, 0, 0);
 		It should_reset_the_climbers = () => Game.Climbers.Count.ShouldEqual(0);
 		It should_update_player_1s_position = () => Game.Players[0].Position.ShouldContainOnly(0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0);
+		It should_return_the_players_final_position = () => Response.FinalPosition.ShouldContainOnly(Game.Players[0].Position);
+		It should_return_the_next_player_number = () => Response.NextPlayer.ShouldEqual(2);
 
 	}
 }

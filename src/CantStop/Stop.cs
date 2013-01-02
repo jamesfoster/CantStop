@@ -15,13 +15,24 @@
 			if (game == null || game.Status != GameState.PreDiceRolled)
 				return null;
 
+			var player = game.Players[game.CurrentPlayer - 1];
+
+			foreach (var climber in game.Climbers)
+			{
+				player.Position[climber.Key - 2] = climber.Value;
+			}
+
 			game.NextPlayer();
 			game.ResetDice();
 			game.Climbers.Clear();
 
 			Games.Update(game);
 
-			return new StopResponse();
+			return new StopResponse
+				{
+					FinalPosition = player.Position,
+					NextPlayer = game.CurrentPlayer
+				};
 		}
 	}
 }
