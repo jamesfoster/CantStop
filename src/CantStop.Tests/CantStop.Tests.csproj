@@ -51,6 +51,7 @@
     <Compile Include="MockRandomNumberGenerator.cs" />
     <Compile Include="MockRepository.cs" />
     <Compile Include="When_a_player_pairs_the_dice_incorrectly.cs" />
+    <Compile Include="When_a_player_pairs_the_dice_starting_at_the_players_last_position.cs" />
     <Compile Include="When_a_player_pairs_the_dice_with_2_climbers_and_no_matches.cs" />
     <Compile Include="When_a_player_pairs_the_dice_with_3_climbers_and_1_match.cs" />
     <Compile Include="When_a_player_pairs_the_dice_with_3_climbers_and_no_matches.cs" />

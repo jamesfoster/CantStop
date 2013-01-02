@@ -44,7 +44,7 @@
 		static bool AddClimber(Game game, Player player, int num)
 		{
 			if (game.Climbers.Count < 3 && !game.Climbers.ContainsKey(num))
-				game.Climbers[num] = 0;
+				game.Climbers[num] = player.Position[num - 2];
 
 			if (game.Climbers.ContainsKey(num))
 			{
