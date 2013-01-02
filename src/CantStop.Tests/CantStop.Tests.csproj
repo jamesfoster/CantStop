@@ -56,6 +56,7 @@
     <Compile Include="When_a_player_pairs_the_dice_with_3_climbers_and_1_match.cs" />
     <Compile Include="When_a_player_pairs_the_dice_with_3_climbers_and_no_matches.cs" />
     <Compile Include="When_a_player_pairs_the_dice_with_no_climbers.cs" />
+    <Compile Include="When_a_player_pairs_the_dice_with_the_same_value.cs" />
     <Compile Include="When_a_player_rolls_the_dice.cs" />
     <Compile Include="When_a_player_rolls_the_dice_has_3_climbers_and_cant_make_a_match.cs" />
     <Compile Include="When_a_player_stops.cs" />
