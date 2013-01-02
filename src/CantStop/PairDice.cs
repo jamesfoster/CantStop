@@ -24,9 +24,9 @@
 			return new PairDiceResponse();
 		}
 
-		bool CheckDecision(Game game, int number1)
+		static bool CheckDecision(Game game, int number1)
 		{
-			var posibilities = GetPosibilities(game.Dice);
+			var posibilities = DiceHelper.GetPosibilities(game.Dice);
 
 			if (!posibilities.Contains(number1))
 				return false;
@@ -41,7 +41,7 @@
 			return added;
 		}
 
-		bool AddClimber(Game game, Player player, int num)
+		static bool AddClimber(Game game, Player player, int num)
 		{
 			if (game.Climbers.Count < 3 && !game.Climbers.ContainsKey(num))
 				game.Climbers[num] = 0;
@@ -53,22 +53,6 @@
 			}
 
 			return false;
-		}
-
-		int[] GetPosibilities(int[] dice)
-		{
-			var result = new int[6];
-			var index = 0;
-
-			for (int i = 0; i < 3; i++)
-			{
-				for (int j = i + 1; j < 4; j++)
-				{
-					result[index++] = dice[i] + dice[j];
-				}
-			}
-
-			return result;
 		}
 	}
 }
