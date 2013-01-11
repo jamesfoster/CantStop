@@ -5,7 +5,7 @@
 	using Domain;
 	using Dto;
 
-	public class PairDice
+	public class PairDice : IUseCase
 	{
 		public IRepository<Game> Games { get; set; }
 

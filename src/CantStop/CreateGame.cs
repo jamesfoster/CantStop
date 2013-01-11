@@ -4,7 +4,7 @@ namespace CantStop
 	using Domain;
 	using Dto;
 
-	public class CreateGame
+	public class CreateGame : IUseCase
 	{
 		public IRepository<Game> Games { get; set; }
 

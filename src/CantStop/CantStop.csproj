@@ -37,6 +37,7 @@
   <ItemGroup>
     <Compile Include="CreateGame.cs" />
     <Compile Include="DiceHelper.cs" />
+    <Compile Include="IUseCase.cs" />
     <Compile Include="PairDice.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RollDice.cs" />

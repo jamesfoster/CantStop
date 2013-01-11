@@ -4,7 +4,7 @@
 	using Domain;
 	using Dto;
 
-	public class StartGame
+	public class StartGame : IUseCase
 	{
 		public IRepository<Game> Games { get; set; }
 

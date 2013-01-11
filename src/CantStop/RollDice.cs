@@ -5,7 +5,7 @@
 	using Dto;
 	using System.Linq;
 
-	public class RollDice
+	public class RollDice : IUseCase
 	{
 		public IRepository<Game> Games { get; set; }
 		public IRandomNumberGenerator Random { get; set; }
