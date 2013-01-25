@@ -68,8 +68,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conventions\ConventionsBase.cs" />
+    <Compile Include="Conventions\RouteConventions.cs" />
     <Compile Include="Conventions\ServiceConventions.cs" />
     <Compile Include="Conventions\TypeHelpers.cs" />
+    <Compile Include="Mocks\MockServiceRoutes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -90,6 +92,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Conventions\RouteConventions.Every_request_object_should_have_at_least_one_corresponding_route.approved.txt" />
     <Content Include="Conventions\ServiceConventions.A_service_method_should_have_a_single_argument.approved.txt" />
     <Content Include="Conventions\ServiceConventions.Each_use_case_should_have_a_corresponding_service.approved.txt" />
     <Content Include="Conventions\ServiceConventions.Service_methods_should_not_return_void.approved.txt" />

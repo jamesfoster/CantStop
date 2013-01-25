@@ -103,6 +103,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppHost.cs" />
+    <Compile Include="Configure\Routes.cs" />
     <Compile Include="CreateGameService.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -122,13 +123,17 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CantStop.Dto\CantStop.Dto.csproj">
-      <Project>{D72C2E6F-4E59-43FD-85A4-287EA2916D90}</Project>
-      <Name>CantStop.Dto</Name>
-    </ProjectReference>
+    <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Properties\" />
+    <ProjectReference Include="..\CantStop.Dto\CantStop.Dto.csproj">
+      <Project>{d72c2e6f-4e59-43fd-85a4-287ea2916d90}</Project>
+      <Name>CantStop.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CantStop\CantStop.csproj">
+      <Project>{67df9eaa-0b8b-48e2-9597-e42422db3af2}</Project>
+      <Name>CantStop</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

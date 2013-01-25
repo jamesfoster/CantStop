@@ -1,5 +1,6 @@
 ﻿namespace CantStop.Web
 {
+	using Configure;
 	using Funq;
 	using ServiceStack.WebHost.Endpoints;
 
@@ -12,7 +13,7 @@
 
 		public override void Configure(Container container)
 		{
-
+			new Routes().Configure(Routes);
 		}
 	}
 }
