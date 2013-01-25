@@ -67,6 +67,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Conventions\ConventionsBase.cs" />
     <Compile Include="Conventions\ServiceConventions.cs" />
     <Compile Include="Conventions\TypeHelpers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -87,6 +88,11 @@
       <Project>{67df9eaa-0b8b-48e2-9597-e42422db3af2}</Project>
       <Name>CantStop</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Conventions\ServiceConventions.A_service_method_should_have_a_single_argument.approved.txt" />
+    <Content Include="Conventions\ServiceConventions.Each_use_case_should_have_a_corresponding_service.approved.txt" />
+    <Content Include="Conventions\ServiceConventions.Service_methods_should_not_return_void.approved.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

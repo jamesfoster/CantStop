@@ -22,23 +22,27 @@
 			return typeof(T).IsSubclassOf(type);
 		}
 
-		public static MethodInfo[] GetDeclaredMethods(this Type type)
+		public static IEnumerable<MethodInfo> GetDeclaredMethods(this Type type)
 		{
-			return type.GetMethods(BindingFlags.Public | BindingFlags.DeclaredOnly | BindingFlags.Instance);
+			return type
+				.GetMethods(BindingFlags.Public | BindingFlags.DeclaredOnly | BindingFlags.Instance)
+				.Where(m => !m.IsSpecialName);
 		}
 
-		public static IEnumerable<Type> GetAllTypes()
+		public static IEnumerable<Type> GetAllTypes(string @namespace = null)
 		{
-			return GetReferencedAssemblies()
-				.SelectMany(a => a.GetTypes());
+			var types = GetAllAssemblies().SelectMany(a => a.GetTypes());
+
+			if (!string.IsNullOrEmpty(@namespace))
+				types = types.Where(t => t.Namespace != null && t.Namespace.StartsWith(@namespace));
+
+			return types;
 		}
 
-		public static IEnumerable<Assembly> GetReferencedAssemblies()
+		public static IEnumerable<Assembly> GetAllAssemblies()
 		{
-			return Assembly.GetExecutingAssembly().GetReferencedAssemblies().Select(Assembly.Load);
+			return AppDomain.CurrentDomain.GetAssemblies();
 		}
-
-
 
 		public static IEnumerable<Type> WithAttribute<TAttribute>(this IEnumerable<Type> types)
 		{
