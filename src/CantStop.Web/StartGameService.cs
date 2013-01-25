@@ -5,9 +5,11 @@
 
 	public class StartGameService : Service
 	{
-		public CreateGameResponse Post(CreateGameRequest request)
+		public IUseCase<StartGameRequest, StartGameResponse> UseCase { get; set; }
+
+		public StartGameResponse Post(StartGameRequest request)
 		{
-			return null;
+			return UseCase.Execute(request);
 		}
 	}
 }

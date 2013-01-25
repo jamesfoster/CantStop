@@ -5,9 +5,11 @@
 
 	public class PairDiceService : Service
 	{
-		public CreateGameResponse Post(CreateGameRequest request)
+		public IUseCase<PairDiceRequest, PairDiceResponse> UseCase { get; set; }
+
+		public PairDiceResponse Post(PairDiceRequest request)
 		{
-			return null;
+			return UseCase.Execute(request);
 		}
 	}
 }

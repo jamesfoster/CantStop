@@ -5,9 +5,11 @@
 
 	public class RollDiceService : Service
 	{
-		public CreateGameResponse Post(CreateGameRequest request)
+		public IUseCase<RollDiceRequest, RollDiceResponse> UseCase { get; set; }
+
+		public RollDiceResponse Post(RollDiceRequest request)
 		{
-			return null;
+			return UseCase.Execute(request);
 		}
 	}
 }

@@ -5,9 +5,11 @@
 
 	public class StopService : Service
 	{
-		public CreateGameResponse Post(CreateGameRequest request)
+		public IUseCase<StopRequest, StopResponse> UseCase { get; set; }
+
+		public StopResponse Post(StopRequest request)
 		{
-			return null;
+			return UseCase.Execute(request);
 		}
 	}
 }
