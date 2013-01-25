@@ -1,4 +1,4 @@
-﻿namespace CantStop.Tests
+﻿namespace CantStop.Tests.Mocks
 {
 	using System.Collections.Generic;
 	using System.Linq;
@@ -6,7 +6,7 @@
 	using Domain;
 	using Moq;
 
-	public class MockRepository
+	public class MockDataRepository
 	{
 		public static Mock<IRepository<T>> Get<T>() where T : class, IEntity
 		{

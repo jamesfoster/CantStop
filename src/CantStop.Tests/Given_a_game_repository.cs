@@ -3,6 +3,7 @@
 	using Data;
 	using Domain;
 	using Machine.Specifications;
+	using Mocks;
 	using Moq;
 
 	public class Given_a_game_repository
@@ -12,7 +13,7 @@
 
 		Establish that = () =>
 			{
-				GameRepositoryMock = MockRepository.Get<Game>();
+				GameRepositoryMock = MockDataRepository.Get<Game>();
 			};
 	}
 }

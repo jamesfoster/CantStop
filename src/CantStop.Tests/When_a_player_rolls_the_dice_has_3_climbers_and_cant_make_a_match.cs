@@ -5,6 +5,7 @@
 	using Domain;
 	using Dto;
 	using Machine.Specifications;
+	using Mocks;
 	using Moq;
 	using It = Machine.Specifications.It;
 

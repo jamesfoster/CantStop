@@ -1,8 +1,8 @@
-﻿namespace CantStop.Tests
+﻿namespace CantStop.Tests.Mocks
 {
 	using System;
 	using System.Collections.Generic;
-	using Data;
+	using CantStop.Data;
 	using Moq;
 
 	public class MockRandomNumberGenerator
